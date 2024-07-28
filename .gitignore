@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+/src/app/stash
 
 # next.js
 /.next/

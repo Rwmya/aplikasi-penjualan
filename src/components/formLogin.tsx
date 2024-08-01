@@ -43,7 +43,7 @@ export const FormLogin = () => {
       setMsgStyle("text-green-600");
       setTimeout(() => {
         router.push("/");
-      }, 2000);
+      }, 1000);
     } else if (authState == 2) {
       setMsgStyle("text-pink-600");
       setMessage("Error username atau password salah");
@@ -57,8 +57,8 @@ export const FormLogin = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-5">
-          <h1 className="mx-auto text-2xl">Halaman Login</h1>
-          <h2 className="mx-auto text-xl">Aplikasi Penjualan UMKM</h2>
+          <h1 className="mx-auto text-2xl text-center">Halaman Login</h1>
+          <h2 className="mx-auto text-xl text-center">Aplikasi Penjualan UMKM</h2>
           <div className="flex flex-col gap-2">
             <p className={`text-sm ${msgStyle}`}>{message}</p>
             <label className="text-lg">username</label>

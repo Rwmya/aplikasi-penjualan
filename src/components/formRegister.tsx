@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { sendData } from "./util";
+import { AiOutlineLock, AiOutlineUser } from "react-icons/ai"
 
 export const FormRegister = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -55,8 +56,8 @@ export const FormRegister = () => {
           <h1 className="mx-auto text-2xl text-center">Halaman Registrasi</h1>
           <h2 className="mx-auto text-xl text-center">Aplikasi Penjualan UMKM</h2>
           <div className="flex flex-col gap-2">
-            <p className={`text-sm ${msgStyle}`}>{message}</p>
-            <label className="text-lg">username</label>
+            <p className={`text-sm text-center ${msgStyle}`}>{message}</p>
+            <label className="text-lg">{<AiOutlineUser className="mr-1 inline-block"/>}username</label>
             <input
               name="username"
               className={`py-1 px-3 rounded border focus:outline-none ${textBox}`}
@@ -68,7 +69,7 @@ export const FormRegister = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label className="text-lg">password</label>
+            <label className="text-lg">{<AiOutlineLock className="mr-1 inline-block"/>}password</label>
             <input
               name="password"
               className="py-1 px-3 rounded border border-slate-300 focus:outline-none focus:ring-1 focus:ring-blue-400"

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { sendData } from "./util";
 import { useRouter } from "next/navigation";
+import { AiOutlineLock, AiOutlineUser } from "react-icons/ai"
 
 export const FormLogin = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -46,7 +47,7 @@ export const FormLogin = () => {
       }, 1000);
     } else if (authState == 2) {
       setMsgStyle("text-pink-600");
-      setMessage("Error username atau password salah");
+      setMessage("Eror username atau password salah");
       setTextBox(
         "text-pink-600 border-pink-500 focus:border-pink-600 ring-pink-600",
       );
@@ -60,20 +61,20 @@ export const FormLogin = () => {
           <h1 className="mx-auto text-2xl text-center">Halaman Login</h1>
           <h2 className="mx-auto text-xl text-center">Aplikasi Penjualan UMKM</h2>
           <div className="flex flex-col gap-2">
-            <p className={`text-sm ${msgStyle}`}>{message}</p>
-            <label className="text-lg">username</label>
+            <p className={`text-sm text-center ${msgStyle}`}>{message}</p>
+            <label className="text-lg">{<AiOutlineUser className="mr-1 inline-block"/>}username</label>
             <input
               name="username"
               className={`py-1 px-3 rounded border focus:outline-none ${textBox}`}
               type="text"
-              placeholder="masukan username anda"
+              placeholder="masukan username anda "
               value={formData.username}
               onChange={handleChange}
               required
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label className="text-lg">password</label>
+            <label className="text-lg">{<AiOutlineLock className="mr-1 inline-block"/>}password</label>
             <input
               name="password"
               className={`py-1 px-3 rounded border focus:outline-none ${textBox}`}
